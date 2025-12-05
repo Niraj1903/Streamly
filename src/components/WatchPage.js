@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentContainer from "./CommentContainer";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -28,6 +29,9 @@ const WatchPage = () => {
           ></iframe>
         </div>
         <CommentContainer />
+      </div>
+      <div>
+        <LiveChat />
       </div>
     </>
   );
