@@ -188,3 +188,66 @@ export function makeid(length) {
   }
   return result;
 }
+
+export const COMMENT_DATA = [
+  {
+    name: "Wolf",
+    text: "This is the first comment.",
+    replies: [
+      {
+        name: "Wolf",
+        text: "This is a reply to the first comment.",
+        replies: [
+          {
+            name: "Wolf",
+            text: "This is a reply to the second comment.",
+            replies: [
+              {
+                name: "Wolf",
+                text: "This is a reply to the third comment.",
+                replies: [
+                  {
+                    name: "Wolf",
+                    text: "This is a reply to the fourth comment.",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "WOLF",
+        text: "This is another reply to the first comment.",
+        replies: [
+          {
+            name: "WOLF",
+            text: "This is a reply to the second reply.",
+            replies: [
+              {
+                name: "WOLF",
+                text: "This is a reply to the third reply.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Wolf",
+    text: "This is the second root comment.",
+    replies: [
+      {
+        name: "Wolf",
+        text: "This is a reply to the second root comment.",
+        replies: [
+          {
+            name: "Wolf",
+            text: "This is a reply to the first reply to the second root comment.",
+          },
+        ],
+      },
+    ],
+  },
+];
