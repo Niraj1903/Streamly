@@ -35,64 +35,54 @@ const LiveChat = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full mt-6">
-      <div className="w-full max-w-md">
-        <div className="text-lg font-semibold mb-3 text-gray-800 text-center">
-          Live Chat
-        </div>
+    <div className="w-full h-[70vh] bg-white border border-gray-200 rounded-xl shadow-sm flex flex-col">
+      <div className="px-3 py-2 border-b border-gray-200 text-sm font-semibold">
+        Live chat
+      </div>
 
-        <div
+      <div className="flex-1 flex flex-col-reverse overflow-y-auto px-3 py-2 text-sm">
+        {allChat.map((c, index) => (
+          <ChatMessage key={index} name={c.name} message={c.message} />
+        ))}
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="px-3 py-2 border-t border-gray-200 flex items-center gap-2"
+      >
+        <input
+          type="text"
+          value={liveMessage}
+          onChange={(e) => setLiveMessage(e.target.value)}
           className="
-            flex flex-col-reverse 
-            min-h-96 max-h-96
+            flex-1 
+            px-3 py-2 
             border border-gray-300 
-            rounded-xl 
-            p-3 
-            bg-white 
-            overflow-y-auto 
-            shadow-md
+            rounded-full 
+            text-xs 
+            focus:outline-none 
+            focus:ring-1 
+            focus:ring-blue-500 
+            focus:border-blue-500
+          "
+          placeholder="Say something..."
+        />
+
+        <button
+          className="
+            px-4 py-2 
+            text-xs font-medium 
+            bg-blue-600 
+            text-white 
+            rounded-full 
+            hover:bg-blue-700 
+            active:scale-95 
+            transition
           "
         >
-          {allChat.map((c, index) => (
-            <ChatMessage key={index} name={c.name} message={c.message} />
-          ))}
-        </div>
-
-        <form onSubmit={handleSubmit} className="mt-3 flex items-center gap-2">
-          <input
-            type="text"
-            value={liveMessage}
-            onChange={(e) => setLiveMessage(e.target.value)}
-            className="
-              flex-1 
-              px-3 py-2 
-              border border-gray-300 
-              rounded-full 
-              text-sm 
-              focus:outline-none 
-              focus:ring-2 
-              focus:ring-blue-500 
-              focus:border-blue-500
-            "
-            placeholder="Chat..."
-          />
-
-          <button
-            className="
-              px-5 py-2 
-              text-sm font-medium 
-              bg-blue-600 
-              text-white 
-              rounded-full 
-              hover:bg-blue-700 
-              active:scale-95 
-              transition
-            "
-          >
-            Send
-          </button>
-        </form>
-      </div>
+          Send
+        </button>
+      </form>
     </div>
   );
 };

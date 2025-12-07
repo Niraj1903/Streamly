@@ -1,12 +1,19 @@
 const Button = ({ name }) => {
   return (
-    <>
-      <div className="">
-        <button className="px-5 py-1 m-2 text-black font-semibold bg-gray-300 hover:bg-black hover:text-white rounded-lg">
-          {name}
-        </button>
-      </div>
-    </>
+    <button
+      className="
+        whitespace-nowrap 
+        px-4 py-1.5 
+        text-sm 
+        bg-gray-200 
+        hover:bg-gray-300 
+        rounded-lg 
+        text-gray-900
+        transition
+      "
+    >
+      {name}
+    </button>
   );
 };
 
