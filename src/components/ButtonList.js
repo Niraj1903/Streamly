@@ -26,7 +26,7 @@ const ButtonList = () => {
           px-4 py-3 
           bg-white 
           border-b border-gray-200 
-          sticky top-14 z-20 
+          
           overflow-x-auto 
           scrollbar-none
         "
